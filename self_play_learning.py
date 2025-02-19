@@ -126,8 +126,8 @@ class SelfPlayLearning:
         print(game_idx)
         self.history = self._load_history()
         
-        with mp.Manager() as menager:
-            shared_lst = menager.list()
+        with mp.Manager() as manager:
+            shared_lst = manager.list()
 
             for i in range(self.learning_cycles):
                 self.model.eval()
